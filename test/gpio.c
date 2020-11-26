@@ -1,11 +1,11 @@
 /* *******************************************
  * Libreria de E/S
- 
-    Daniel Paz Marcos
-    David Martín Martín
-    Universidad de La Laguna
 
-******************************************* */
+ Daniel Paz Marcos
+ David Martín Martín
+ Universidad de La Laguna
+
+ ******************************************* */
 
 #include <stdio.h>
 #include <types.h>
@@ -15,51 +15,50 @@
 #include <sys/locks.h>
 
 
-/*
- * #define PIN_A1 M6812_DDRA << 3 | 0x00
-    8 #define PIN_A2 M6812_DDRA << 3 | 0x01
-    7 #define PIN_A3 M6812_DDRA << 3 | 0x02
-    6 #define PIN_A4 M6812_DDRA << 3 | 0x03
-    5 #define PIN_A5 M6812_DDRA << 3 | 0x04
-    4 #define PIN_A6 M6812_DDRA << 3 | 0x05
-    3 #define PIN_A7 M6812_DDRA << 3 | 0x06
-    2 #define PIN_A8 M6812_DDRA << 3 | 0x07
-    1
-  13  #define PIN 0x07
-    1 #define REGISTRO ~0x00 >> 3
-
-    */
-
+#define SET_PIN_S M6812_DDRS
+#define SET_PIN_T M6812_DDRT
+#define SET_PIN_G M6812_DDRG
+#define SET_PIN_H M6812_DDRH
+#define SET_PIN_S M6812_DDRS
+#define SET_PIN_G M6812_DDRE 
 
 void gpio_set_output(int reg, int port)
 {
-    reg >> 3;
-    _io_ports[reg] |= port;
+	_io_ports[reg] |= 1UL << port;
+}
 
-    printf("%d", reg);
+void gpio_set_output_all_reg(int reg)
+{
+	_io_ports[reg] |= 0xFF;
+}
+
+void gpio_set_input(int reg, int port)
+{
+	_io_ports[reg] &= ~(1UL << port); 
 }
 
 
-void gpio_set_input(int port)
+void gpio_set_input_all_reg(int reg)
 {
-
-
-
+	_io_ports[reg] &= 0x00;
 }
 
 
 int main()
 {
+	serial_init();
 
-    lock();
+	lock();
 
-    char c[];
-    unlock();
-    c = serial_recv();
+	unlock();
+	gpio_set_output_all_reg(SET_PIN_G);
+	serial_printbinbyte(_io_ports[SET_PIN_G]);
 
-    gpio_set_output(M6812_PORTG, 2)
+	gpio_set_input(SET_PIN_G, 2);
+	serial_printbinbyte(_io_ports[SET_PIN_G]);
 
 
 
-    return 0;
+
+	return 0;
 }
