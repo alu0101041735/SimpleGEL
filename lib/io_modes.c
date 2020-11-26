@@ -42,23 +42,3 @@ void gpio_set_input_all_reg(int reg)
 {
 	_io_ports[reg] &= 0x00;
 }
-
-
-int main()
-{
-	serial_init();
-
-	lock();
-
-	unlock();
-	gpio_set_output_all_reg(SET_PIN_G);
-	serial_printbinbyte(_io_ports[SET_PIN_G]);
-
-	gpio_set_input(SET_PIN_G, 2);
-	serial_printbinbyte(_io_ports[SET_PIN_G]);
-
-
-
-
-	return 0;
-}
