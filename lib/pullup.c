@@ -46,7 +46,7 @@ int gpio_pup_enable(int reg) {
 
 	} else if (reg == M6812_PORTS){
 		//Enable pup for port S
-		uint8_t bits = _io_ports[M6812_PURDS];
+		unsigned char bits = _io_ports[M6812_PURDS];
 		bits |= 0x07;
 		_io_ports[M6812_PURDS] = bits;
 
@@ -55,7 +55,7 @@ int gpio_pup_enable(int reg) {
 		_io_ports[M6812_TMSK2] |= 0x01 << 5;
 
 	} else if (reg == M6812_PORTCAN){
-		_io_ports[M6812_PCTLCAN] == 0x02;
+		_io_ports[M6812_PCTLCAN] |= 0x02;
 	} else {
 		return EXIT_FAILURE;
 	}
