@@ -24,11 +24,6 @@
 #define EXIT_FAILURE 1
 
 
-int gpio_pud_enable() {
-	return EXIT_SUCCESS;
-}
-
-
 int gpio_pup_enable(int reg) {
 	int special_port = ((reg == M6812_PORTP) ||
 											(reg == M6812_PORTS) || 
@@ -63,7 +58,35 @@ int gpio_pup_enable(int reg) {
 }
 
 int gpio_pup_disable_(int reg) {
-	_io_ports[M6812_PUCR] &= ~reg;
+	int special_port = ((reg == M6812_PORTP) ||
+											(reg == M6812_PORTS) || 
+											(reg == M6812_PORTT) || 
+											(reg == M6812_PORTCAN));
+
+
+	if (!special_port) {
+		//Enable pullup for ports A, B, E, G, H
+		_io_ports[M6812_PUCR] &= ~reg;
+
+	} else if (reg == M6812_PORTP){
+		//Enable pup for port P
+		_io_ports[M6812_PWCTL] &= ~(0x01 << 1);
+
+	} else if (reg == M6812_PORTS){
+		//Enable pup for port S
+		unsigned char bits = _io_ports[M6812_PURDS];
+		bits &= ~0x07;
+		_io_ports[M6812_PURDS] = bits;
+
+	} else if (reg == M6812_PORTT){
+		//Enable pup for port T
+		_io_ports[M6812_TMSK2] &= ~(0x01 << 5);
+
+	} else if (reg == M6812_PORTCAN){
+		_io_ports[M6812_PCTLCAN] &= ~0x02;
+	} else {
+		return EXIT_FAILURE;
+	}
 	return EXIT_SUCCESS;
 }
 
