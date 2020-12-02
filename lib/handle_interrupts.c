@@ -144,26 +144,3 @@ void __attribute__((interrupt)) vi_kwgh(void)
 
 }
 
-int main()
-{
-
-	lock();
-	serial_print("\nInterrupt G register before set: ");
-	serial_printbinbyte(_io_ports[INTERRUPT_PIN_G]);
-
-	gpio_set_interrupt_pin(INTERRUPT_PIN_G, 0);
-
-	serial_print("\nInterrupt G register after set: ");
-	serial_printbinbyte(_io_ports[INTERRUPT_PIN_G]);
-
-	unlock();
-
-	while(1) {
-
-
-
-	}
-
-
-	return 0;
-}
