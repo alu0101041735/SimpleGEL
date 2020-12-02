@@ -2,8 +2,8 @@
 /* *******************************************
  * Libreria de E/S
 
- Daniel Paz Marcos
- David Martín Martín
+\author Daniel Paz Marcos
+\author David Martín Martín
  Universidad de La Laguna
 
  ******************************************* */
@@ -15,23 +15,35 @@
 #include <sys/sio.h>
 #include <sys/locks.h>
 
+/**
+ * puertos de interrupción de la librería
+ * */
 #define INTERRUPT_PIN_G M6812_KWIEG
 #define INTERRUPT_PIN_H M6812_KWIEH
 
 
+#define SR_G 0xFFCE
+#define SR_H 0xFFCF
 
 
+/**
+ * Vector de interrupciones.
+ * */
+void (*interrupt[])(void) = {SR_G, SR_H};
+
+/**
+ * Función que activa un pin de interrupción, pasándole un registro y un número de puerto, definidos en la librería
+ * */
 void gpio_set_interrupt_pin(int reg, int port)
 {
 	_io_ports[reg] |= 1UL << port;
 }
 
-void gpio_handle_interrupt()
-{
 
-
-}
-
+/**
+ * Función que Maneja las interrupciones.
+ * Es llamada al enviar una señal de interrupción por uno de los pines con su flag activada
+ * */
 void __attribute__((interrupt)) vi_kwgh(void)
 {
 	
@@ -109,12 +121,15 @@ void __attribute__((interrupt)) vi_kwgh(void)
 	char c_port = (char) port;
 	if (port_g == 0) {
 
+                interrupt[SR_G]();
+
 		serial_print("Interrupción generada por el puerto G");
 		serial_send(c_port);
 		serial_print("\n");
 
 	}
 	else {
+                interrupt[SR_H]();
 		serial_print("Interrupción generada por el puerto H");
 		serial_send(c_port);
 		serial_print("\n");
@@ -125,7 +140,6 @@ void __attribute__((interrupt)) vi_kwgh(void)
 
 
 	}
-
 	serial_print("\nInterrupt ");
 
 }
