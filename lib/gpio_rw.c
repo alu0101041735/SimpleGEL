@@ -12,6 +12,130 @@ typedef struct Optional {
 	unsigned char data;
 } Optional;
 
+typedef struct IOError {
+	char code;
+	char string[50];
+} IOError;
+
+
+void gpio_write_pin(int port, unsigned char pin, unsigned char data) {
+	unsigned char direction = 0;
+	int direction_port = 0;
+	unsigned short is_read_only = (port == M6812_PORTAD0) ||
+																(port == M6812_PORTAD1);
+
+	//If pin not in range return empy optional.
+	if (!(pin < 8 && pin >= 0)) {
+		return;
+	}
+
+	//If port is read only avoid further checks.
+	if (is_read_only) {
+		return;
+	}
+
+	switch (port) {
+		case M6812_PORTA:
+			direction_port = M6812_DDRA;
+			break;
+		case M6812_PORTB:
+			direction_port = M6812_DDRB;
+			break;
+		case M6812_PORTE:
+			direction_port = M6812_DDRE;
+			break;
+		case M6812_PORTG:
+			direction_port = M6812_DDRG;
+			break;
+		case M6812_PORTH:
+			direction_port = M6812_DDRH;
+			break;
+		case M6812_PORTP:
+			direction_port = M6812_DDRP;
+			break;
+		case M6812_PORTS:
+			direction_port = M6812_DDRS;
+			break;
+		case M6812_PORTT:
+			direction_port = M6812_DDRT;
+			break;
+		case M6812_PORTCAN:
+			direction_port = M6812_DDRCAN;
+			break;
+	}
+
+	direction = _io_ports[direction_port] & pin;
+	if (direction != 1) {
+		return;
+	} else {
+		char register_cpy = _io_ports[port];
+		register_cpy = (register_cpy & (~pin));
+		_io_ports[port] = register_cpy | pin;
+	}
+}
+
+Optional gpio_read_pin(int port, unsigned char pin) {
+	Optional data;
+	data.is_valid = 0;
+	unsigned char direction = 0;
+	int direction_port = 0;
+	unsigned short is_read_only = (port == M6812_PORTAD0) ||
+																(port == M6812_PORTAD1);
+
+	//If pin not in range return empy optional.
+	if (!(pin < 8 && pin >= 0)) {
+		return data;
+	}
+
+	//If port is read only avoid further checks.
+	if (is_read_only) {
+		data.is_valid = 0;
+		data.data = _io_ports[port] & pin;
+		return data;
+	}
+
+	switch (port) {
+		case M6812_PORTA:
+			direction_port = M6812_DDRA;
+			break;
+		case M6812_PORTB:
+			direction_port = M6812_DDRB;
+			break;
+		case M6812_PORTE:
+			direction_port = M6812_DDRE;
+			break;
+		case M6812_PORTG:
+			direction_port = M6812_DDRG;
+			break;
+		case M6812_PORTH:
+			direction_port = M6812_DDRH;
+			break;
+		case M6812_PORTP:
+			direction_port = M6812_DDRP;
+			break;
+		case M6812_PORTS:
+			direction_port = M6812_DDRS;
+			break;
+		case M6812_PORTT:
+			direction_port = M6812_DDRT;
+			break;
+		case M6812_PORTCAN:
+			direction_port = M6812_DDRCAN;
+			break;
+		default:
+			return data;
+	}
+
+	direction = _io_ports[direction_port] & pin;
+	if (direction != 0) {
+		return data;
+	}
+	
+	data.data = _io_ports[port] && pin;
+	data.is_valid = 1;
+	return data;
+}
+
 Optional gpio_read_port(int port) {
 	Optional data;
 	if (port == M6812_PORTCAN) {
@@ -21,7 +145,7 @@ Optional gpio_read_port(int port) {
 		return data;
 	}
 
-	int read_mode_enabled;
+	unsigned short read_mode_enabled;
 
 	switch (port) {
 		case M6812_PORTA:
