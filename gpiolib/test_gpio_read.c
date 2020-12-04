@@ -15,6 +15,8 @@ int main() {
 
 	gpio_set_input_all_reg(SET_PIN_H);
 
+	serial_printbinbyte(_io_ports[SET_PIN_H]);
+
 	data_arr[0] = gpio_read_pin(M6812_PORTH, 0);
 	data_arr[1] = gpio_read_pin(M6812_PORTH, 1);
 	data_arr[2] = gpio_read_pin(M6812_PORTH, 2);
@@ -32,15 +34,6 @@ int main() {
 		serial_print("\n");
 		serial_print("\n");
 	}
-	data = gpio_read_port(M6812_PORTE);
-	data_full = 	data_arr[0].data |
-			data_arr[1].data << 1 |
-			data_arr[2].data << 2 |
-			data_arr[3].data << 3 |
-			data_arr[4].data << 4 |
-			data_arr[5].data << 5 |
-			data_arr[6].data << 6 |
-			data_arr[7].data << 7;
 
 	if (data.data == data_full) {
 		serial_print("ok");

@@ -281,7 +281,7 @@ void gpio_write_pin(int port, unsigned char pin, unsigned char data) {
       break;
   }
 
-  direction = _io_ports[direction_port] & pin;
+  direction = _io_ports[direction_port] & (0x01 << pin);
   if (direction != 1) {
     return;
   } else {
@@ -304,12 +304,14 @@ Optional gpio_read_pin(int port, unsigned char pin) {
     (port == M6812_PORTAD1);
 
   //If pin not in range return empy optional.
-  if (!(pin > 8)) {
+  if ((pin >= 8)) {
+	 serial_print("return\n"); 
     return data;
   }
 
   //If port is read only avoid further checks.
   if (is_read_only) {
+	 serial_print("return2\n"); 
     data.is_valid = 0;
     data.data = _io_ports[port] & pin;
     return data;
@@ -353,7 +355,7 @@ Optional gpio_read_pin(int port, unsigned char pin) {
     return data;
   }
 
-  data.data = _io_ports[port] && pin;
+  data.data = !!(_io_ports[port] & (1 << pin));
   data.is_valid = 1;
   return data;
 }
