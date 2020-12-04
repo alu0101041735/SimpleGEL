@@ -110,42 +110,34 @@ void __attribute__((interrupt)) vi_kwgh(void)
   switch (reg) {
 
     case (0x01):
-      serial_print("port0\n");
       port = 0;
       _io_ports[reg] &= ~(1UL << port); 
       break;
     case (0x02):
-      serial_print("port1\n");
       port = 1;
       _io_ports[reg] &= ~(1UL << port); 
       break;
     case (0x04):
-      serial_print("port2\n");
       port = 2;
       _io_ports[reg] &= ~(1UL << port); 
       break;
     case (0x08):
-      serial_print("port3\n");
       port = 3;
       _io_ports[reg] &= ~(1UL << port); 
       break;
     case (0x10):
-      serial_print("port4\n");
       port = 4;
       _io_ports[reg] &= ~(1UL << port); 
       break;
     case (0x20):
-      serial_print("port5\n");
       port = 5;
       _io_ports[reg] &= ~(1UL << port); 
       break;
     case (0x40):
-      serial_print("port6\n");
       port = 6;
       _io_ports[reg] &= ~(1UL << port); 
       break;
     case (0x80):
-      serial_print("port7\n");
       port = 7;
       _io_ports[reg] &= ~(1UL << port); 
       break;
@@ -162,7 +154,6 @@ void __attribute__((interrupt)) vi_kwgh(void)
   else {
     interrupt[SR_H]();
   }
-
 
 }
 
