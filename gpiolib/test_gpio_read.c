@@ -6,10 +6,10 @@
 int main() {
 	//unsigned char data_arr[8];
 	unsigned char data_full;
-	unsigned char data;	
+	//unsigned char data;	
 
 	Optional data_arr[8];
-	//Optional data;
+	Optional data;
 
 	gpio_pup_enable(M6812_PORTE);
 
@@ -24,14 +24,14 @@ int main() {
 	data_arr[7] = gpio_read_pin(M6812_PORTE, 7);
 
 	data = gpio_read_port(M6812_PORTE);
-	data_full = 	data_arr[0] |
-			data_arr[1] << 1 |
-			data_arr[2] << 2 |
-			data_arr[3] << 3 |
-			data_arr[4] << 4 |
-			data_arr[5] << 5 |
-			data_arr[6] << 6 |
-			data_arr[7] << 7;
+	data_full = 	data_arr[0].data |
+			data_arr[1].data << 1 |
+			data_arr[2].data << 2 |
+			data_arr[3].data << 3 |
+			data_arr[4].data << 4 |
+			data_arr[5].data << 5 |
+			data_arr[6].data << 6 |
+			data_arr[7].data << 7;
 
 	if (data.data == data_full) {
 		serial_print("ok");
