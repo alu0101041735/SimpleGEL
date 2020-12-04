@@ -1,8 +1,26 @@
 var searchData=
 [
-  ['tcm_5ffactor',['TCM_FACTOR',['../_onda_cuadrada_o_c2_8c.html#a134a3b8f72b67f890fce9e9dbb0e61ad',1,'TCM_FACTOR():&#160;OndaCuadradaOC2.c'],['../_onda_general_o_c2_8c.html#a134a3b8f72b67f890fce9e9dbb0e61ad',1,'TCM_FACTOR():&#160;OndaGeneralOC2.c'],['../_porcentaje_alto_8c.html#a134a3b8f72b67f890fce9e9dbb0e61ad',1,'TCM_FACTOR():&#160;PorcentajeAlto.c'],['../_saca7_segmentos_8c.html#a134a3b8f72b67f890fce9e9dbb0e61ad',1,'TCM_FACTOR():&#160;Saca7Segmentos.c']]],
-  ['tcm_5ffreq',['TCM_FREQ',['../_onda_cuadrada_o_c2_8c.html#ae9c668aaded5c8e542690fdbb011840b',1,'TCM_FREQ():&#160;OndaCuadradaOC2.c'],['../_onda_general_o_c2_8c.html#ae9c668aaded5c8e542690fdbb011840b',1,'TCM_FREQ():&#160;OndaGeneralOC2.c'],['../_porcentaje_alto_8c.html#ae9c668aaded5c8e542690fdbb011840b',1,'TCM_FREQ():&#160;PorcentajeAlto.c'],['../_saca7_segmentos_8c.html#ae9c668aaded5c8e542690fdbb011840b',1,'TCM_FREQ():&#160;Saca7Segmentos.c']]],
-  ['tmp_5fmax',['TMP_MAX',['../stdio_8h.html#ada7e63a6fb078a062192145950369d09',1,'stdio.h']]],
-  ['true',['TRUE',['../types_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d',1,'types.h']]],
-  ['types_2eh',['types.h',['../types_8h.html',1,'']]]
+  ['p_5ftmpdir_1150',['P_tmpdir',['../stdio_8h.html#a09ceb74f0162424b6ceb823a4c702b85',1,'stdio.h']]],
+  ['pages_5f0_2ejs_1151',['pages_0.js',['../pages__0_8js.html',1,'']]],
+  ['param_2eh_1152',['param.h',['../param_8h.html',1,'']]],
+  ['periodo_1153',['Periodo',['../_onda_cuadrada_o_c2_8c.html#a12cd1bf50948573e3bdc38f64ecd0a4a',1,'Periodo():&#160;OndaCuadradaOC2.c'],['../_saca7_segmentos_8c.html#a12cd1bf50948573e3bdc38f64ecd0a4a',1,'Periodo():&#160;Saca7Segmentos.c']]],
+  ['periodoh_1154',['PeriodoH',['../_onda_general_o_c2_8c.html#a1e1e797c7332c3af0624295ce068d311',1,'OndaGeneralOC2.c']]],
+  ['periodol_1155',['PeriodoL',['../_onda_general_o_c2_8c.html#a85713bba9f65365ac1821c29ec383883',1,'OndaGeneralOC2.c']]],
+  ['pin_1156',['PIN',['../detached__lib_2pullup_8c.html#ae1a27401b7fb01ccb9a82dbddbb54eea',1,'PIN():&#160;pullup.c'],['../gpio_8h.html#ae1a27401b7fb01ccb9a82dbddbb54eea',1,'PIN():&#160;gpio.h']]],
+  ['pin_5fa1_1157',['PIN_A1',['../detached__lib_2pullup_8c.html#aceb8d227e063cc486808d5d41735a050',1,'PIN_A1():&#160;pullup.c'],['../gpio_8h.html#aceb8d227e063cc486808d5d41735a050',1,'PIN_A1():&#160;gpio.h']]],
+  ['pin_5fa2_1158',['PIN_A2',['../detached__lib_2pullup_8c.html#aa181f8521480dfcc1eb2688075701a4c',1,'PIN_A2():&#160;pullup.c'],['../gpio_8h.html#aa181f8521480dfcc1eb2688075701a4c',1,'PIN_A2():&#160;gpio.h']]],
+  ['pin_5fa3_1159',['PIN_A3',['../detached__lib_2pullup_8c.html#a933cca5ab119d5e74639e7ac5d120d8a',1,'PIN_A3():&#160;pullup.c'],['../gpio_8h.html#a933cca5ab119d5e74639e7ac5d120d8a',1,'PIN_A3():&#160;gpio.h']]],
+  ['pin_5fa4_1160',['PIN_A4',['../detached__lib_2pullup_8c.html#aea5f553ed9a6c4dac77e9c77d0cd0391',1,'PIN_A4():&#160;pullup.c'],['../gpio_8h.html#aea5f553ed9a6c4dac77e9c77d0cd0391',1,'PIN_A4():&#160;gpio.h']]],
+  ['pin_5fa5_1161',['PIN_A5',['../detached__lib_2pullup_8c.html#ab78a92a8cba92ec5664599083bcb2f52',1,'PIN_A5():&#160;pullup.c'],['../gpio_8h.html#ab78a92a8cba92ec5664599083bcb2f52',1,'PIN_A5():&#160;gpio.h']]],
+  ['pin_5fa6_1162',['PIN_A6',['../detached__lib_2pullup_8c.html#afc06e9c4314680dcb8900c88079a954f',1,'PIN_A6():&#160;pullup.c'],['../gpio_8h.html#afc06e9c4314680dcb8900c88079a954f',1,'PIN_A6():&#160;gpio.h']]],
+  ['pin_5fa7_1163',['PIN_A7',['../detached__lib_2pullup_8c.html#a027cabbaecdcdfdc68fbd92f8e1922ac',1,'PIN_A7():&#160;pullup.c'],['../gpio_8h.html#a027cabbaecdcdfdc68fbd92f8e1922ac',1,'PIN_A7():&#160;gpio.h']]],
+  ['pin_5fa8_1164',['PIN_A8',['../detached__lib_2pullup_8c.html#a77c84e33cd974a2c18b6efebdcf61937',1,'PIN_A8():&#160;pullup.c'],['../gpio_8h.html#a77c84e33cd974a2c18b6efebdcf61937',1,'PIN_A8():&#160;gpio.h']]],
+  ['porcentajealto_2ec_1165',['PorcentajeAlto.c',['../_porcentaje_alto_8c.html',1,'']]],
+  ['ports_2eh_1166',['ports.h',['../ports_8h.html',1,'']]],
+  ['ports_5fdef_2eh_1167',['ports_def.h',['../ports__def_8h.html',1,'']]],
+  ['premain_2ec_1168',['premain.c',['../premain_8c.html',1,'']]],
+  ['printf_1169',['printf',['../printf_8c.html#ae3e208df31f6201d65e1da7eaec531d2',1,'printf.c']]],
+  ['printf_2ec_1170',['printf.c',['../printf_8c.html',1,'']]],
+  ['pullup_2ec_1171',['pullup.c',['../detached__lib_2pullup_8c.html',1,'(Global Namespace)'],['../include_2pullup_8c.html',1,'(Global Namespace)']]],
+  ['pullup_2eh_1172',['pullup.h',['../pullup_8h.html',1,'']]]
 ];
