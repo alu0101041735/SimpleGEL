@@ -19,13 +19,14 @@
 /**
  * Pines permitidos para modos de IO
  **/
-#define SET_PIN_S M6812_DDRS
-#define SET_PIN_T M6812_DDRT
+#define SET_PIN_A M6812_DDRA
+#define SET_PIN_B M6812_DDRB
+#define SET_PIN_E M6812_DDRE
 #define SET_PIN_G M6812_DDRG
 #define SET_PIN_H M6812_DDRH
+#define SET_PIN_P M6812_DDRP
 #define SET_PIN_S M6812_DDRS
-#define SET_PIN_G M6812_DDRE 
-
+#define SET_PIN_T M6812_DDRT
 
 
 /**
