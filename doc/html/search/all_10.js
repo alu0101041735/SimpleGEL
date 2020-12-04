@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['uint16_5ft',['uint16_t',['../types_8h.html#a273cf69d639a59973b6019625df33e30',1,'types.h']]],
-  ['uint32_5ft',['uint32_t',['../types_8h.html#a06896e8c53f721507066c079052171f8',1,'types.h']]],
-  ['uint8_5ft',['uint8_t',['../types_8h.html#aba7bc1797add20fe3efdf37ced1182c5',1,'types.h']]],
-  ['unused',['unused',['../struct____s_file.html#a2ff411b23972f6578df341c33895d3e2',1,'__sFile']]],
-  ['usg_5f2_5fticks',['USG_2_TICKS',['../_onda_cuadrada_o_c2_8c.html#a946ce8e303aa14b0d5769b9845abea86',1,'USG_2_TICKS():&#160;OndaCuadradaOC2.c'],['../_onda_general_o_c2_8c.html#a946ce8e303aa14b0d5769b9845abea86',1,'USG_2_TICKS():&#160;OndaGeneralOC2.c'],['../_porcentaje_alto_8c.html#a946ce8e303aa14b0d5769b9845abea86',1,'USG_2_TICKS():&#160;PorcentajeAlto.c'],['../_saca7_segmentos_8c.html#a946ce8e303aa14b0d5769b9845abea86',1,'USG_2_TICKS():&#160;Saca7Segmentos.c']]],
-  ['utilidadesseriales_2ec',['UtilidadesSeriales.c',['../_utilidades_seriales_8c.html',1,'']]]
+  ['read_5fenabled_5fport_1173',['READ_ENABLED_PORT',['../gpio__rw_8c.html#a915c7fd970e53c9ff7923da67fb18493',1,'READ_ENABLED_PORT():&#160;gpio_rw.c'],['../gpio_8h.html#a915c7fd970e53c9ff7923da67fb18493',1,'READ_ENABLED_PORT():&#160;gpio.h']]],
+  ['readme_2emd_1174',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['registro_1175',['REGISTRO',['../detached__lib_2pullup_8c.html#a38e152ed2e3da7891e43642057967935',1,'REGISTRO():&#160;pullup.c'],['../gpio_8h.html#a38e152ed2e3da7891e43642057967935',1,'REGISTRO():&#160;gpio.h']]],
+  ['regs_2eh_1176',['regs.h',['../regs_8h.html',1,'']]]
 ];

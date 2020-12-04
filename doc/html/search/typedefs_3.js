@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['uint16_5ft',['uint16_t',['../types_8h.html#a273cf69d639a59973b6019625df33e30',1,'types.h']]],
-  ['uint32_5ft',['uint32_t',['../types_8h.html#a06896e8c53f721507066c079052171f8',1,'types.h']]],
-  ['uint8_5ft',['uint8_t',['../types_8h.html#aba7bc1797add20fe3efdf37ced1182c5',1,'types.h']]]
+  ['optional_1466',['Optional',['../gpio__rw_8c.html#a4377edd8799a308303d4d5b469cd5530',1,'Optional():&#160;gpio_rw.c'],['../gpio_8h.html#a4377edd8799a308303d4d5b469cd5530',1,'Optional():&#160;gpio.h']]]
 ];

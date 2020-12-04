@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['unused',['unused',['../struct____s_file.html#a2ff411b23972f6578df341c33895d3e2',1,'__sFile']]]
+  ['string_1457',['string',['../struct_i_o_error.html#a7dfce6299b6a133269fae7c5c926b8f0',1,'IOError']]],
+  ['subida_1458',['Subida',['../_porcentaje_alto_8c.html#a3d82646337aa0e27a924f2b55fcb6010',1,'PorcentajeAlto.c']]]
 ];

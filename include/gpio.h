@@ -1,6 +1,6 @@
 /**
  * Cabecera de librería E/S 
- * \file gpio.c
+ * \file gpio.h
  * \author Daniel Paz Marcos
  * \author David Martín Martín
  * \date 02/12/20

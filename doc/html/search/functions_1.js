@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['bench_5fempty',['bench_empty',['../group__benchs.html#gaad2929a69d1228e2ca9246512acd9ef2',1,'benchs.h']]],
-  ['bench_5finit',['bench_init',['../group__benchs.html#ga3423f563d8320928f0c937ae854a8c2d',1,'benchs.h']]],
-  ['bench_5freport',['bench_report',['../group__benchs.html#ga20a9f5029eb8efea7be4f9bcdbb32176',1,'benchs.h']]],
-  ['bench_5fstart',['bench_start',['../group__benchs.html#ga58f7a2e9cd909e8c5b9104659a3587d5',1,'benchs.h']]],
-  ['bench_5fstop',['bench_stop',['../group__benchs.html#gaa5ab6277006aebcde85c3deeb1086560',1,'benchs.h']]]
+  ['bench_5fempty_1390',['bench_empty',['../benchs_8h.html#aad2929a69d1228e2ca9246512acd9ef2',1,'benchs.h']]],
+  ['bench_5finit_1391',['bench_init',['../benchs_8h.html#a3423f563d8320928f0c937ae854a8c2d',1,'benchs.h']]],
+  ['bench_5freport_1392',['bench_report',['../benchs_8h.html#a20a9f5029eb8efea7be4f9bcdbb32176',1,'benchs.h']]],
+  ['bench_5fstart_1393',['bench_start',['../benchs_8h.html#a58f7a2e9cd909e8c5b9104659a3587d5',1,'benchs.h']]],
+  ['bench_5fstop_1394',['bench_stop',['../benchs_8h.html#aa5ab6277006aebcde85c3deeb1086560',1,'benchs.h']]]
 ];

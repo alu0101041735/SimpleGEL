@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['param_2eh',['param.h',['../param_8h.html',1,'']]],
-  ['porcentajealto_2ec',['PorcentajeAlto.c',['../_porcentaje_alto_8c.html',1,'']]],
-  ['ports_2eh',['ports.h',['../ports_8h.html',1,'']]],
-  ['ports_5fdef_2eh',['ports_def.h',['../ports__def_8h.html',1,'']]],
-  ['premain_2ec',['premain.c',['../premain_8c.html',1,'']]],
-  ['printf_2ec',['printf.c',['../printf_8c.html',1,'']]]
+  ['imath_2eh_1338',['imath.h',['../imath_8h.html',1,'']]],
+  ['interrupts_2eh_1339',['interrupts.h',['../interrupts_8h.html',1,'']]],
+  ['io_5fmodes_2ec_1340',['io_modes.c',['../io__modes_8c.html',1,'']]]
 ];
