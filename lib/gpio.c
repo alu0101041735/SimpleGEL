@@ -84,7 +84,7 @@ void gpio_set_interrupt_all_pins(int reg)
 
 /**
  * Función que Maneja las interrupciones.
- * Es llamada al enviar una señal de interrupción por uno de los pines con su flag activada
+ * Es llamada al enviar una señal de interrupción por uno de los pines
  * */
 void __attribute__((interrupt)) vi_kwgh(void)
 {

@@ -20,10 +20,18 @@
 int main()
 {
 
+  serial_printbinbyte(_io_ports[SET_PIN_G]);
+  serial_print("\n");
+  serial_printbinbyte(_io_ports[SET_PIN_S]);
+  serial_print("\n");
 
-    gpio_set_output(SET_PIN_G, 1);
-    gpio_set_output_all_reg(SET_PIN_S);
+  gpio_set_output(SET_PIN_G, 1);
+  gpio_set_output_all_reg(SET_PIN_S);
 
+  serial_printbinbyte(_io_ports[SET_PIN_G]);
+  serial_print("\n");
+  serial_printbinbyte(_io_ports[SET_PIN_S]);
+  serial_print("\n");
 
-    return 0;
+  return 0;
 }
