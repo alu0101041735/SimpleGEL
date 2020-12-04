@@ -251,7 +251,7 @@ void gpio_write_pin(int port, unsigned char pin, unsigned char data) {
     (port == M6812_PORTAD1);
 
   //If pin not in range return empy optional.
-  if (!(pin < 8 && pin >= 0)) {
+  if (!(pin > 8)) {
     return;
   }
 
@@ -313,7 +313,7 @@ Optional gpio_read_pin(int port, unsigned char pin) {
     (port == M6812_PORTAD1);
 
   //If pin not in range return empy optional.
-  if (!(pin < 8 && pin >= 0)) {
+  if (!(pin > 8)) {
     return data;
   }
 
@@ -356,11 +356,11 @@ Optional gpio_read_pin(int port, unsigned char pin) {
       return data;
   }
 
-
-  direction = _io_ports[direction_port] & pin;
-  //if (direction != 0) {
-  //  return data;
-  //}
+  direction = _io_ports[direction_port] & (0x01 << pin);
+  if (direction != 0) {
+	serial_print("El pin esta en modo escritura");	
+    return data;
+  }
 
   data.data = _io_ports[port] && pin;
   data.is_valid = 1;
