@@ -356,8 +356,9 @@ Optional gpio_read_pin(int port, unsigned char pin) {
       return data;
   }
 
-  direction = _io_ports[direction_port] & pin;
+  direction = _io_ports[direction_port] & (0x01 << pin);
   if (direction != 0) {
+	serial_print("El pin esta en modo escritura");	
     return data;
   }
 
