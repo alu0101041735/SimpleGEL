@@ -23,6 +23,7 @@ int main() {
 	data_arr[6] = gpio_read_pin(M6812_PORTE, 6);
 	data_arr[7] = gpio_read_pin(M6812_PORTE, 7);
 
+
 	data = gpio_read_port(M6812_PORTE);
 	data_full = 	data_arr[0].data |
 			data_arr[1].data << 1 |

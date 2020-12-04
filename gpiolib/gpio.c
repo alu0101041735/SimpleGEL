@@ -290,7 +290,7 @@ void gpio_write_pin(int port, unsigned char pin, unsigned char data) {
       break;
   }
 
-  direction = _io_ports[direction_port] & pin;
+  direction = _io_ports[direction_port] & (0x01 << pin);
   if (direction != 1) {
     return;
   } else {
