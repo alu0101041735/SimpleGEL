@@ -48,12 +48,37 @@ void gpio_set_input_all_reg(int reg)
  * */
 void (*interrupt[])(void) = {SR_G, SR_H};
 
+
 /**
  * Función que activa un pin de interrupción, pasándole un registro y un número de puerto, definidos en la librería
  * */
 void gpio_set_interrupt_pin(int reg, int port)
 {
 	_io_ports[reg] |= 1UL << port;
+}
+
+/**
+ * Función que desactiva un pin de interrupción
+ * */
+void gpio_reset_interrupt_pin(int reg, int port)
+{
+	_io_ports[reg] &= ~(1UL << port); 
+}
+
+/**
+ * Función que desactiva todos los pines de interrupción de un registro
+ * */
+void gpio_reset_all_pins(int reg)
+{
+	_io_ports[reg] &= 0x00; 
+}
+
+/**
+ * Función que activa todos los pines de interrupción de un registro
+ * */
+void gpio_set_interrupt_all_pins(int reg)
+{
+    _io_ports[reg] |= 0xFF;
 }
 
 
@@ -81,11 +106,6 @@ void __attribute__((interrupt)) vi_kwgh(void)
 		reg = _io_ports[M6812_KWIFH];
 
 	}
-
-	serial_print("\n");
-	serial_printbinbyte(reg);
-	serial_print("\n");
-
 
 	switch (reg) {
 
@@ -139,25 +159,11 @@ void __attribute__((interrupt)) vi_kwgh(void)
 	if (port_g == 0) {
 
                 interrupt[SR_G]();
-
-		serial_print("Interrupción generada por el puerto G");
-		serial_send(c_port);
-		serial_print("\n");
-
 	}
 	else {
                 interrupt[SR_H]();
-		serial_print("Interrupción generada por el puerto H");
-		serial_send(c_port);
-		serial_print("\n");
-
 	}
 
-	while (_io_ports[reg] != 0x00) {
-
-
-	}
-	serial_print("\nInterrupt ");
 
 }
 

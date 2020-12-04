@@ -8,7 +8,7 @@
 
 
 /**
- * Pines permitidos
+ * Pines permitidos para modos de IO
  **/
 #define SET_PIN_S M6812_DDRS
 #define SET_PIN_T M6812_DDRT
