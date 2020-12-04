@@ -1,7 +1,6 @@
 
 #include "../include/types.h"
-#include "../lib/gpio.h"
-#include "../lib/gpio.c"
+#include "gpio.h"
 
 
 int main() {

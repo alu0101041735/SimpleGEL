@@ -20,7 +20,7 @@
 #include <sys/interrupts.h>
 #include <sys/sio.h>
 #include <sys/locks.h>
-//#include "../include/sys/ports_def.h"
+#include "../include/sys/ports_def.h"
 
 
 /**
@@ -99,83 +99,32 @@ typedef struct IOError {
 } IOError;
 
 
+void gpio_set_output(int reg, int port);
 
+void gpio_set_output_all_reg(int reg);
 
-/**
- * */
-extern void gpio_set_output(int reg, int port);
+void gpio_set_input(int reg, int port);
 
+void gpio_set_input_all_reg(int reg);
 
-/**
- * */
-extern void gpio_set_output_all_reg(int reg);
+void gpio_set_interrupt_pin(int reg, int port);
 
+void gpio_reset_interrupt_pin(int reg, int port);
 
-/**
- * */
-extern void gpio_set_input(int reg, int port);
+void gpio_reset_all_pins(int reg);
 
+void gpio_set_interrupt_all_pins(int reg);
 
-/**
- * */
-extern void gpio_set_input_all_reg(int reg);
+void __attribute__((interrupt)) vi_kwgh(void);
 
+int gpio_pup_enable(int reg);
 
-/**
- * */
-extern void (*interrupt[])(void) = {SR_G, SR_H};
+int gpio_pup_disable_(int reg);
 
+void gpio_write_pin(int port, unsigned char pin, unsigned char data);
 
-/**
- * */
-extern void gpio_set_interrupt_pin(int reg, int port);
+Optional gpio_read_pin(int port, unsigned char pin);
 
+Optional gpio_read_port(int port);
 
-/**
- * */
-extern void gpio_reset_interrupt_pin(int reg, int port);
-
-
-/**
- * */
-extern void gpio_reset_all_pins(int reg),
-
-
-/**
- * */
-extern void gpio_set_interrupt_all_pins(int reg);
-
-
-/**
- * */
-extern void __attribute__((interrupt)) vi_kwgh(void);
-
-
-/**
- * */
-extern int gpio_pup_enable(int reg);
-
-
-/**
- * */
-extern int gpio_pup_disable_(int reg);
-
-
-/**
- * */
-extern void gpio_write_pin(int port, unsigned char pin, unsigned char data);
-
-
-/**
- * */
-extern Optional gpio_read_pin(int port, unsigned char pin);
-
-
-/**
- * */
-extern Optional gpio_read_port(int port);
-
-
-/**
- * */
-extern char gpio_write_port(int port, char data);
+char gpio_write_port(int port, char data);

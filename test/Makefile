@@ -29,7 +29,7 @@ SRCDIR=.
 
 BASEDIR=$(SRCDIR)/..
 
-fuentes:=$(wildcard *.c)
+fuentes:=$(wildcard test_*.c)
 
 s19s:=$(fuentes:.c=.s19)
 
@@ -44,8 +44,19 @@ s19s:=$(fuentes:.c=.s19)
 all : $(fuentes:.c=.elf) $(s19s)
 
 
+#Evitamos que se borren los fichero intermedios (%.o)
+.SECONDARY :
+
+
 #simple.elf:	$(OBJS)
 #	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
 
 
 include $(BASEDIR)/config/make.defs
+
+gpio.o : gpio.c gpio.h
+	$(CC) -c -o $@ $<
+
+test_% : test_%.o gpio.o
+	$(CC)  $(LDFLAGS) -o $@ $< ad.o
+

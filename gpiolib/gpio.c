@@ -7,7 +7,7 @@
  * Universidad de La Laguna
  **/
 
-#include <gpio.h>
+#include "gpio.h"
 
 /**
  * Pone la flag de output a un pin, indicado en los define
@@ -155,7 +155,6 @@ void __attribute__((interrupt)) vi_kwgh(void)
       break;
   }
 
-  char c_port = (char) port;
   if (port_g == 0) {
 
     interrupt[SR_G]();
