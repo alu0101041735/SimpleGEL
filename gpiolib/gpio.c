@@ -356,10 +356,11 @@ Optional gpio_read_pin(int port, unsigned char pin) {
       return data;
   }
 
+
   direction = _io_ports[direction_port] & pin;
-  if (direction != 0) {
-    return data;
-  }
+  //if (direction != 0) {
+  //  return data;
+  //}
 
   data.data = _io_ports[port] && pin;
   data.is_valid = 1;

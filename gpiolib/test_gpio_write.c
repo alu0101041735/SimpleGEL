@@ -19,4 +19,8 @@ int main() {
 	gpio_write_pin(M6812_PORTE, 5, 0);
 	gpio_write_pin(M6812_PORTE, 6, 1);
 	gpio_write_pin(M6812_PORTE, 7, 0);
+
+	serial_print("\n");
+	serial_printbinbyte(_io_ports[M6812_PORTE]);
+	serial_print("\n");
 }
