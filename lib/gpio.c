@@ -431,7 +431,7 @@ Optional gpio_read_port(int port) {
 
 
 /**
- * Función para leer un puerto
+ * Función para escribir un puerto
  * */
 char gpio_write_port(int port, char data) {
   //Only allow to write to ports with all pins able to read

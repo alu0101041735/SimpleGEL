@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['optional_1256',['Optional',['../struct_optional.html',1,'']]]
+  ['optional_1260',['Optional',['../struct_optional.html',1,'']]]
 ];
